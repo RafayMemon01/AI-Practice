@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ask Gemini</title>
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="light-mode">
+  <!-- Loading Spinner -->
+  <div class="spinner-container" id="spinner">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Main Content Container -->
+  <div class="container" id="content">
+    <header>
+      <div class="header-title">
+        <h1>Ask Gemini</h1>
+      </div>
+      <nav class="nav-links">
+        <a href="#" target="_blank" rel="noopener">Repository</a>
+        <a href="#" target="_blank" rel="noopener">Portfolio</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <button id="toggle-theme" class="theme-btn bi bi-moon-fill" aria-label="Toggle Dark Mode"></button>
+      </nav>
+    </header>
+
+    <main>
+      <div id="response" class="fade-in">
+        <!-- Gemini’s answer will appear here -->
+      </div>
+      <div id="loading" class="loading hidden">Thinking...</div>
+    </main>
+
+    <footer>
+      <p>Developed by Rafay Memon</p>
+    </footer>
+  </div>
+
+  <!-- Fixed Query Form -->
+  <form id="queryForm" onsubmit="event.preventDefault(); askGemini();">
+    <input type="text" id="userQuery" placeholder="Ask Gemini..." required />
+    <button type="submit" aria-label="Send Query" class="send-btn bi bi-send-fill"></button>
+  </form>
+
+  <script src="./script.js"></script>
+</body>
+</html>
